@@ -1,0 +1,28 @@
+@(bookForm: Form[Book])
+
+@import helper._
+
+@main {
+    
+    <h1>Add a book</h1>
+    
+    @form(routes.BookController.save()) {
+        
+        <fieldset>
+        
+            @inputText(bookForm("name"), 'label -> "Book name")(twitterBootstrapInput)
+            @inputText(bookForm("edition"), 'label -> "Edition")(twitterBootstrapInput)
+            @inputText(bookForm("editorial"), 'label -> "Editorial")(twitterBootstrapInput)
+            @inputText(bookForm("year"), 'label -> "Year")(twitterBootstrapInput)
+            @inputText(bookForm("remark"), 'label -> "Remark")(twitterBootstrapInput)
+
+        </fieldset>
+        
+        <div class="actions">
+            <input type="submit" value="Create this Book" class="btn primary"> or 
+            <a href="@routes.BookController.index" class="btn">Cancel</a> 
+        </div>
+        
+    }
+    
+}

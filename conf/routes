@@ -1,0 +1,23 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                       controllers.BookController.index
+
+# Books list (look at the default values for pagination parameters)
+GET     /books                  controllers.BookController.list(p:Int ?= 0, s:Int ?= 2, f ?= "")
+
+# Add book
+GET     /books/new              controllers.BookController.create
+POST    /books                  controllers.BookController.save
+
+# Edit existing book
+GET     /books/:id              controllers.BookController.edit(id:Long)
+POST    /books/:id              controllers.BookController.update(id:Long)
+
+# Delete a book
+POST    /books/:id/delete       controllers.BookController.delete(id:Long)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file           controllers.Assets.at(path="/public", file)

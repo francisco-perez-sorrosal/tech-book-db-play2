@@ -1,0 +1,26 @@
+@(content: Html)
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My DB of Technical Books</title>
+        <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/bootstrap.min.css")"> 
+        <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/main.css")"> 
+    </head>
+    <body>
+        
+        <header class="topbar">
+            <h1 class="fill">
+                <a href="@routes.BookController.index()">
+                    My first steps with Play 2.0 and Scala Web Dev. with a Book DB
+                </a>
+            </h1>
+        </header>
+        
+        <section id="main">
+            @content
+        </section>
+        
+    </body>
+</html>
+
